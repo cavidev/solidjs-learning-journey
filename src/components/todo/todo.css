@@ -1,0 +1,16 @@
+button.add {
+    background-color: green;
+    width: 45px;
+    height: 30px;
+}
+
+button.delete {
+    background-color: red;
+}
+
+div.body {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
