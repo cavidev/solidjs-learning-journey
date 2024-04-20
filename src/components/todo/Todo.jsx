@@ -1,15 +1,13 @@
 import { createSignal, createMemo, createEffect,batch, For, Show  } from "solid-js";
 import { createLocalStore, removeIndex } from "../utils";
+import Input from '../input/Input';
+
 import './todo.css'
 
 const Todo = () => {
   const [newTitle, setTitle] = createSignal("");
   const [todos, setTodos] = createLocalStore("todos", []);
   const isPendingItemsClear = createMemo(() => !todos.some((todo) => !todo.done));
-
-  createEffect(() => {
-    console.log("debug", isPendingItemsClear());
-  })
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -25,36 +23,23 @@ const Todo = () => {
   return (
     <div class="body" >
         <div>
-            <h3>Adding todo: </h3>
-            <form onSubmit={addTodo}>
+            <form class="input-group" onSubmit={addTodo}>
+                <label class="input-group__label">Write the Todo:</label>
                 <input
-                    placeholder="enter todo and click +"
+                    class="input-group__input" 
+                    placeholder="press enter to add"
                     required
                     value={newTitle()}
                     onInput={(e) => setTitle(e.currentTarget.value)}
-                />
-                <button class="add">Add</button>
+                ><button class="add">Add</button></input>
+                
             </form>
         </div>
         <div>
             <h3>Pending Items: </h3>
             <For each={todos}>
                 {(todo, i) => (
-                    <Show when={!todo.done} >
-                        <input
-                            type="checkbox"
-                            checked={todo.done}
-                            onChange={(e) => setTodos(i(), "done", e.currentTarget.checked)}
-                        />
-                        <input
-                            type="text"
-                            value={todo.title}
-                            onChange={(e) => setTodos(i(), "title", e.currentTarget.value)}
-                        />
-                        <button class="delete" onClick={() => setTodos((t) => removeIndex(t, i()))}>
-                            Delete
-                        </button>
-                    </Show>
+                   <Input data-index={i()} done={todo.done} title={todo.title} index={i} setTodos={setTodos}/>
                 )}
             </For>
             <Show when={isPendingItemsClear()} >
@@ -66,19 +51,21 @@ const Todo = () => {
             <For each={todos}>
                 {(todo, i) => (
                     <Show when={todo.done} >
-                        <input
-                            type="checkbox"
-                            checked={todo.done}
-                            onChange={(e) => setTodos(i(), "done", e.currentTarget.checked)}
-                        />
-                        <input
-                            type="text"
-                            value={todo.title}
-                            onChange={(e) => setTodos(i(), "title", e.currentTarget.value)}
-                        />
-                        <button class="delete" onClick={() => setTodos((t) => removeIndex(t, i()))}>
-                            Delete
-                        </button>
+                        <div>
+                            <input
+                                type="checkbox"
+                                checked={todo.done}
+                                onChange={(e) => setTodos(i(), "done", e.currentTarget.checked)}
+                            />
+                            <input
+                                type="text"
+                                value={todo.title}
+                                onChange={(e) => setTodos(i(), "title", e.currentTarget.value)}
+                            />
+                            <button class="delete" onClick={() => setTodos((t) => removeIndex(t, i()))}>
+                                Delete
+                            </button>
+                        </div>
                     </Show>
                 )}
             </For>

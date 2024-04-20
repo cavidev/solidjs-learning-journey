@@ -14,3 +14,64 @@ div.body {
     justify-content: space-evenly;
     flex-direction: row;
 }
+
+.input-group {
+    width: 100%;
+    max-width: 20em;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  
+    @supports (mix-blend-mode: darken) {
+      position: relative;
+      mix-blend-mode: lighten;
+  
+      & > label {
+        position: absolute;
+        left: 3em;
+        top: -0.28em;
+        background: #000;
+      }
+    }
+  
+    & > label {
+      padding: 0 0.5em;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+      font-size: 0.875em;
+      letter-spacing: 0.1em;
+      color: #ccd;
+      color: rgba(255, 220, 255, 0.6);
+      cursor: pointer;
+    }
+  
+    & > input {
+      color: #fff;
+      font-size: 1.25rem;
+      line-height: 1;
+      border-style: none;
+      outline: none;
+        /* height calc line-height + (vertical-padding * 2) + (vertical-border * 2)*/
+      height: calc(1em + 1.6em + 0.5em);
+      width: 100%;
+      padding: 0.8em 1em;
+      border: 0.25em solid transparent;
+      background-image: linear-gradient(#000, #000),
+        linear-gradient(120deg, #fff 0%, #fff 50%, rgb(69,196,176) 100%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      border-radius: 1.8em;
+      background-size: 200% 100%;
+      transition: background-position 0.8s ease-out;
+      
+      &:hover {
+        background-position: 100% 0;
+      }
+  
+      &:focus {
+        outline: 2px dashed #45C4B0;
+        outline-offset: 0.5em;
+      }
+    }
+  }
+  
