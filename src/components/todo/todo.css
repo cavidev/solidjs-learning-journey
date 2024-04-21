@@ -5,19 +5,19 @@ button.add {
 }
 
 button.delete {
-    background-color: red;
+    background-color: transparent;
 }
 
-div.body {
+.todoApp {
+  & div {
+    width: 50%;
     display: flex;
-    align-items: stretch;
-    justify-content: space-evenly;
-    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .input-group {
     width: 100%;
-    max-width: 20em;
     display: flex;
     flex-direction: column;
     z-index: 2;
@@ -68,10 +68,10 @@ div.body {
         background-position: 100% 0;
       }
   
-      &:focus {
+      /* &:focus {
         outline: 2px dashed #45C4B0;
         outline-offset: 0.5em;
-      }
+      } */
     }
   }
   
