@@ -1,0 +1,46 @@
+{
+    "files.eol": "\n",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "git.ignoreLegacyWarning": true,
+    "workbench.editorAssociations": {
+        "*.svg": "default"
+    },
+    "terminal.integrated.env.windows": {},
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#ffffff",
+        "terminalCursor.foreground": "#ffffff"
+    },
+    "terminal.integrated.cursorStyle": "underline",
+    "[javascript]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "editor.cursorBlinking": "expand",
+    "editor.fontFamily": "'Victor Mono', 'JetBrains Mono', 'Anonymous Pro', monospace",
+    "editor.tabSize": 4,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.fontSize": 14,
+    "editor.fontWeight": "200",
+    "editor.codeLensFontFamily": "'Anonymous Pro', 'JetBrains Mono'",
+    "editor.fontVariations": true,
+    "editor.experimental.asyncTokenization": true,
+    "editor.fontLigatures": "'ss02'",
+    "editor.guides.bracketPairs": false,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.guides.highlightActiveBracketPair": true,
+    "editor.stickyScroll.enabled": true,
+    "oneDarkPro.bold": false,
+    "errorLens.fontStyleItalic": true,
+    "errorLens.fontFamily": "'Anonymous Pro'",
+    "files.autoSave": "onFocusChange",
+    "editor.inlayHints.fontFamily": "'Anonymous Pro', 'JetBrains Mono'",
+    "editor.inlineSuggest.fontFamily": "'Anonymous Pro', 'JetBrains Mono', default",
+    "debug.console.fontFamily": "'Anonymous Pro', 'JetBrains Mono', default",
+    "scm.inputFontFamily": "'Anonymous Pro', 'JetBrains Mono', default",
+    "gitlens.blame.fontFamily": "'Anonymous Pro', 'JetBrains Mono', default",
+    "editor.codeActionsOnSave": { },
+    "terminal.integrated.fontFamily": "'Anonymous Pro'",
+    "workbench.productIconTheme": "Default",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "js-auto-backticks.enableRevert": true,
+}
