@@ -30,9 +30,12 @@ const Todo = () => {
     const secondInHour = 3600;
     const timeToDelete = 24 * secondInHour;
 
+    console.log("todos", todos);
+
     if(e.currentTarget.checked) {
         const id = setTimeout(() => setTodos((prev) => removeIndex(prev, index())), timeToDelete);
-        setTodos(index(), "deleteTimeout", id)
+        setTodos(index(), "deleteTimeout", id);
+        setTodos(index(), "dateToDelete", new Date(new Date()+ timeToDelete));
     } else {
         clearTimeout(todos[index()].deleteTimeout);
     }
